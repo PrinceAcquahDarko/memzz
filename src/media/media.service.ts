@@ -68,7 +68,7 @@ export class MediaService {
     }
 
     ImageUrl(dto, file){
-        const url = process.env.PORT || 'http://localhost:3000'
+        const url = process.env.PORT 
         dto.link = `${url}/${file?.path}`
     }
 
