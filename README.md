@@ -1,30 +1,7 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
-
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+The backend repository for my MemBank app written in [Nest](https://github.com/nestjs/nest) framework.
 
 ## Installation
 
@@ -45,29 +22,52 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
+## Features
 
-# e2e tests
-$ npm run test:e2e
+- Home
 
-# test coverage
-$ npm run test:cov
-```
+  This feature allows you to view memes in the entire database. One can filter according to videos, images or gifs. There's also a search bar which helps you search for a meme, mind you it searches through the description of the memes.
 
-## Support
+- Add
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+  This feature located at the home page allows a registered account to upload a meme.
+  The meme should have a short title and a descriptive description about the meme, the description can include title of the meme which helps in searching.
+
+- Detail
+
+  This page routes in when a user clicks on a meme. It contains the title, description, the creator of the meme and more. A registered account can like, dislike and add to favourites the meme. Any user can download a meme. A meme created by you will provide you with an option to either update or delete the meme.
+
+- Profile Page
+
+  A page where one can view a user who uploaded a meme. Here you can find memes uploaded by the user, follow the user and much more.
+
+- Gallary Page
+
+  Your page where you find your uploaded memes and stats.
+
+- Favourite Page
+
+  All memez added as favs would be shown here.
+
+- Settings Page
+
+  This page allows you to edit your info such as passwords and profile pic. 
+  It also provides you an option to log out.
+
+- Log In & Register Page
+
+  For auth
+
+  ## Support
+
+All ideas are welcomed. Reach out below
+
+
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Darko Prince Acquah]
+- Website - [http://princedarko.me](http://princedarko.me)
+- Twitter - [@kwamePrince_](https://twitter.com/kwamePrince_)
 
-## License
-
-Nest is [MIT licensed](LICENSE).
