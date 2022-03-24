@@ -3,12 +3,11 @@ import { prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { follwersDto, LikesDto } from './dto';
 import * as argon from 'argon2'
-import { ConfigService } from '@nestjs/config';
 
 
 @Injectable()
 export class UserService {
-    constructor(private config:ConfigService, private ps: PrismaService){}
+    constructor( private ps: PrismaService){}
 
     async Followers(dto:follwersDto){
      
@@ -265,7 +264,7 @@ export class UserService {
 
 
     ImageUrl(dto, file){
-        const url = this.config.get('PORT') || 'http://localhost:3000'
+        const url = process.env.PORT || 'http://localhost:3000'
         dto.link = `${url}/${file?.path}`
     }
 

@@ -1,11 +1,10 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { editMediaDto, MediaDto } from './dto';
 
 @Injectable()
 export class MediaService {
-    constructor(private config:ConfigService,private ps: PrismaService){}
+    constructor(private ps: PrismaService){}
 
     async uploadMedia(dto:MediaDto, file, userId:number){
         this.mediaType(dto, file)
@@ -69,7 +68,7 @@ export class MediaService {
     }
 
     ImageUrl(dto, file){
-        const url = this.config.get('PORT') || 'http://localhost:3000'
+        const url = process.env.PORT || 'http://localhost:3000'
         dto.link = `${url}/${file?.path}`
     }
 
