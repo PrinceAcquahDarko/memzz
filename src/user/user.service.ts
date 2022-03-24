@@ -264,7 +264,7 @@ export class UserService {
 
 
     ImageUrl(dto, file){
-        const url = process.env.PORT 
+        const url = "https://gentle-atoll-57493.herokuapp.com"
         dto.link = `${url}/${file?.path}`
     }
 
