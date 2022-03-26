@@ -10,13 +10,13 @@ export class MediaService {
     async uploadMedia(dto:MediaDto, file, userId){
         this.mediaType(dto, file)
         let cloudi = v2()
+        console.log('fired')
         let res = await cloudi.uploader.upload(file.path)
-        
+        console.log(res, 'from res')
         dto.link = res.secure_url
 
         // this.ImageUrl(dto,file)
         
-        // http://localhost:3000/files\\2022-03-07T17-06-13.326Zavi.jpg
        return await this.createMedia(dto, userId)
         
 
