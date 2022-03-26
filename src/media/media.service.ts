@@ -7,18 +7,14 @@ import {v2} from '../utils'
 export class MediaService {
     constructor(private ps: PrismaService){}
 
-    async uploadMedia(dto:MediaDto, file){
+    async uploadMedia(dto:MediaDto, file, userId){
         this.mediaType(dto, file)
         let cloudi = v2()
-        console.log('fired')
         let res = await cloudi.uploader.upload(file.path)
-        console.log(res, 'from res')
         dto.link = res.secure_url
 
-        return {res, dto}
-        // this.ImageUrl(dto,file)
         
-    //    return await this.createMedia(dto, userId)
+       return await this.createMedia(dto, userId)
         
 
     }
