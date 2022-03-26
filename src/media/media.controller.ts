@@ -35,8 +35,8 @@ export class MediaController {
             fileSize: 1024*1024 * 5
           }
     }))
-    uploadMedia(@GetUser('id') userId: number, @Body() dto:MediaDto, @UploadedFile() file: Express.Multer.File) {
-      return this.ms.uploadMedia(dto, file,userId)
+    uploadMedia( @GetUser('id') userId: number, @Body() dto:MediaDto, @UploadedFile() file: Express.Multer.File) {
+      return this.ms.uploadMedia(dto, file, userId)
     }
     @UseGuards(JwtGuard)
     @Patch(':id')

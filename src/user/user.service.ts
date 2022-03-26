@@ -3,7 +3,7 @@ import { prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { follwersDto, LikesDto } from './dto';
 import * as argon from 'argon2'
-
+import {v2} from '../utils'
 
 @Injectable()
 export class UserService {
@@ -233,7 +233,9 @@ export class UserService {
    
    async updateUser(dto,file, userId){
         if(file){
-            this.ImageUrl(dto, file)
+            let cloudi = v2()
+            let res = await cloudi.uploader.upload(file.path)
+            dto.link = res.secure_url
         }
         const updatedUser = await this.ps.user.update({
             where:{

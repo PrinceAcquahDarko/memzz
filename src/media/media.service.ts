@@ -1,15 +1,20 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { editMediaDto, MediaDto } from './dto';
+import {v2} from '../utils'
 
 @Injectable()
 export class MediaService {
     constructor(private ps: PrismaService){}
 
-    async uploadMedia(dto:MediaDto, file, userId:number){
+    async uploadMedia(dto:MediaDto, file, userId){
         this.mediaType(dto, file)
+        let cloudi = v2()
+        let res = await cloudi.uploader.upload(file.path)
+        
+        dto.link = res.secretUrl
 
-        this.ImageUrl(dto,file)
+        // this.ImageUrl(dto,file)
         
         // http://localhost:3000/files\\2022-03-07T17-06-13.326Zavi.jpg
        return await this.createMedia(dto, userId)
