@@ -10,7 +10,7 @@ export class MediaService {
     async uploadMedia(dto:MediaDto, file, userId){
         this.mediaType(dto, file)
         let cloudi = v2()
-        let res = await cloudi.uploader.upload(file.path)
+        let res = await cloudi.uploader.upload(file.path, {resource_type:"auto"})
         dto.link = res.secure_url
 
         
