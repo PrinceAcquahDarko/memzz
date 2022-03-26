@@ -23,7 +23,8 @@ const imageFileFilter = (req, file, callback) => {
 export class MediaController {
     constructor(private ms: MediaService){}
 
-    @UseGuards(JwtGuard)
+    // @UseGuards(JwtGuard)
+    // @GetUser('id') userId: number,
     @Post()
     @UseInterceptors(FileInterceptor('file', {
         storage: diskStorage({
@@ -35,8 +36,8 @@ export class MediaController {
             fileSize: 1024*1024 * 5
           }
     }))
-    uploadMedia( @GetUser('id') userId: number, @Body() dto:MediaDto, @UploadedFile() file: Express.Multer.File) {
-      return this.ms.uploadMedia(dto, file, userId)
+    uploadMedia( @Body() dto:MediaDto, @UploadedFile() file: Express.Multer.File) {
+      return this.ms.uploadMedia(dto, file)
     }
     @UseGuards(JwtGuard)
     @Patch(':id')
