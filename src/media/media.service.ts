@@ -12,7 +12,7 @@ export class MediaService {
         let cloudi = v2()
         let res = await cloudi.uploader.upload(file.path)
         
-        dto.link = res.secretUrl
+        dto.link = res.secure_url
 
         // this.ImageUrl(dto,file)
         
