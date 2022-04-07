@@ -3,6 +3,8 @@
 
 The backend repository for my MemBank app written in [Nest](https://github.com/nestjs/nest) framework.
 
+The frontend written in angular/ionic can be found here [https://github.com/PrinceAcquahDarko/memBank/](https://github.com/PrinceAcquahDarko/memBank/) 
+
 ## Installation
 
 ```bash
